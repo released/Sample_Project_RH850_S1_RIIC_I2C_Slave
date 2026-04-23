@@ -30,6 +30,11 @@
 #define I2C_SLAVE_CMD_WRITE_THEN_READ_REG_EXT         (0x60U)
 #define I2C_SLAVE_CMD_READBACK_REG_EXT                (0x61U)
 #define I2C_SLAVE_RX_CHECKSUM_ENABLE                  (0U)    /* 0: disable, 1: enable */
+/*
+    Custom RIIC1 error ISR path:
+    - I2C_Slave_RIIC1_ErrorISR_Custom() must be dispatched from
+      r_Config_RIIC1_error_interrupt() in Config_RIIC1_user.c.
+*/
 #define I2C_RIIC1_CUSTOM_ERROR_ISR_ENABLE             (1U)
 #define I2C_SLAVE_HW_TIMEOUT_INT_ENABLE               (0U)
 

@@ -51,30 +51,6 @@ Global variables and functions
 ***********************************************************************************************************************/
 void R_Pins_Create(void)
 {
-    /* Set RIIC0SCL(P10_3) pin */
-    PORT.PIBC10 &= _PORT_CLEAR_BIT3;
-    PORT.PBDC10 &= _PORT_CLEAR_BIT3;
-    PORT.PM10 |= _PORT_SET_BIT3;
-    PORT.PMC10 &= _PORT_CLEAR_BIT3;
-    PORT.PIPC10 &= _PORT_CLEAR_BIT3;
-    PORT.PFC10 |= _PORT_SET_BIT3;
-    PORT.PFCE10 &= _PORT_CLEAR_BIT3;
-    PORT.PFCAE10 &= _PORT_CLEAR_BIT3;
-    PORT.PMC10 |= _PORT_SET_BIT3;
-    PORT.PM10 &= _PORT_CLEAR_BIT3;
-
-    /* Set RIIC0SDA(P10_2) pin */
-    PORT.PIBC10 &= _PORT_CLEAR_BIT2;
-    PORT.PBDC10 &= _PORT_CLEAR_BIT2;
-    PORT.PM10 |= _PORT_SET_BIT2;
-    PORT.PMC10 &= _PORT_CLEAR_BIT2;
-    PORT.PIPC10 &= _PORT_CLEAR_BIT2;
-    PORT.PFC10 |= _PORT_SET_BIT2;
-    PORT.PFCE10 &= _PORT_CLEAR_BIT2;
-    PORT.PFCAE10 &= _PORT_CLEAR_BIT2;
-    PORT.PMC10 |= _PORT_SET_BIT2;
-    PORT.PM10 &= _PORT_CLEAR_BIT2;
-
     /* Set RIIC1SCL(P8_1) pin */
     PORT.PIBC8 &= _PORT_CLEAR_BIT1;
     PORT.PBDC8 &= _PORT_CLEAR_BIT1;

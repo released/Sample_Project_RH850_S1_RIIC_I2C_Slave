@@ -68,40 +68,6 @@ typedef unsigned char      								bool;
 
 /*_____ D E F I N I T I O N S ______________________________________________*/
 
-/*
-    I2C app role select:
-    - APP_I2C_ROLE_MASTER_ONLY : enable RIIC0 master path only
-    - APP_I2C_ROLE_SLAVE_ONLY  : enable RIIC1 slave path only
-    - APP_I2C_ROLE_DUAL        : enable both
-
-    Default in this project: APP_I2C_ROLE_SLAVE_ONLY
-    You can override APP_I2C_ROLE from project compiler defines.
-*/
-#define APP_I2C_ROLE_MASTER_ONLY                        (1U)
-#define APP_I2C_ROLE_SLAVE_ONLY                         (2U)
-#define APP_I2C_ROLE_DUAL                               (3U)
-
-#ifndef APP_I2C_ROLE
-#define APP_I2C_ROLE                                    (APP_I2C_ROLE_SLAVE_ONLY)
-#endif
-
-#if ((APP_I2C_ROLE != APP_I2C_ROLE_MASTER_ONLY) && \
-     (APP_I2C_ROLE != APP_I2C_ROLE_SLAVE_ONLY) && \
-     (APP_I2C_ROLE != APP_I2C_ROLE_DUAL))
-#error "APP_I2C_ROLE must be MASTER_ONLY, SLAVE_ONLY or DUAL"
-#endif
-
-#if (APP_I2C_ROLE == APP_I2C_ROLE_MASTER_ONLY)
-#define APP_I2C_MASTER_ENABLED                          (1U)
-#define APP_I2C_SLAVE_ENABLED                           (0U)
-#elif (APP_I2C_ROLE == APP_I2C_ROLE_SLAVE_ONLY)
-#define APP_I2C_MASTER_ENABLED                          (0U)
-#define APP_I2C_SLAVE_ENABLED                           (1U)
-#else
-#define APP_I2C_MASTER_ENABLED                          (1U)
-#define APP_I2C_SLAVE_ENABLED                           (1U)
-#endif
-
 /*  
 	template
 	typedef struct _peripheral_manager_t

@@ -34,7 +34,6 @@ Includes
 #include "Config_OSTM0.h"
 #include "Config_PORT.h"
 #include "Config_UART0.h"
-#include "Config_RIIC0.h"
 #include "Config_RIIC1.h"
 #include "r_cg_cgc.h"
 

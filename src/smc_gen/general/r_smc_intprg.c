@@ -1203,7 +1203,7 @@ void eiint75(void)
 
 /* RIIC0 TRANSMIT DATA EMPTY INTERRUPT */
 #if defined (__CCRH__)
-#pragma interrupt eiint76(enable=false, channel=76, fpu=true, callt=false)
+#pragma interrupt r_Config_RIIC0_transmit_interrupt(enable=false, channel=76, fpu=true, callt=false)
 #elif defined (__ghs__)
 #pragma ghs interrupt
 #elif defined (__ICCRH850__)
@@ -1211,14 +1211,15 @@ void eiint75(void)
 #else
 #error Unknown Compiler
 #endif
-void eiint76(void)
+void r_Config_RIIC0_transmit_interrupt(void)
 {
-    unused_isr();
+/* Start user code for r_Config_RIIC0_transmit_interrupt. Do not edit comment generated here */
+/* End user code. Do not edit comment generated here */
 }
 
 /* RIIC0 RECEIVE ERROR/EVENT INTERRUPT */
 #if defined (__CCRH__)
-#pragma interrupt eiint77(enable=false, channel=77, fpu=true, callt=false)
+#pragma interrupt r_Config_RIIC0_error_interrupt(enable=false, channel=77, fpu=true, callt=false)
 #elif defined (__ghs__)
 #pragma ghs interrupt
 #elif defined (__ICCRH850__)
@@ -1226,14 +1227,15 @@ void eiint76(void)
 #else
 #error Unknown Compiler
 #endif
-void eiint77(void)
+void r_Config_RIIC0_error_interrupt(void)
 {
-    unused_isr();
+/* Start user code for r_Config_RIIC0_error_interrupt. Do not edit comment generated here */
+/* End user code. Do not edit comment generated here */
 }
 
 /* RIIC0 RECEIVE COMPLETE INTERRUPT */
 #if defined (__CCRH__)
-#pragma interrupt eiint78(enable=false, channel=78, fpu=true, callt=false)
+#pragma interrupt r_Config_RIIC0_receive_interrupt(enable=false, channel=78, fpu=true, callt=false)
 #elif defined (__ghs__)
 #pragma ghs interrupt
 #elif defined (__ICCRH850__)
@@ -1241,14 +1243,15 @@ void eiint77(void)
 #else
 #error Unknown Compiler
 #endif
-void eiint78(void)
+void r_Config_RIIC0_receive_interrupt(void)
 {
-    unused_isr();
+/* Start user code for r_Config_RIIC0_receive_interrupt. Do not edit comment generated here */
+/* End user code. Do not edit comment generated here */
 }
 
 /* RIIC0 TRANSMIT COMPLETE INTERRUPT */
 #if defined (__CCRH__)
-#pragma interrupt eiint79(enable=false, channel=79, fpu=true, callt=false)
+#pragma interrupt r_Config_RIIC0_transmitend_interrupt(enable=false, channel=79, fpu=true, callt=false)
 #elif defined (__ghs__)
 #pragma ghs interrupt
 #elif defined (__ICCRH850__)
@@ -1256,9 +1259,10 @@ void eiint78(void)
 #else
 #error Unknown Compiler
 #endif
-void eiint79(void)
+void r_Config_RIIC0_transmitend_interrupt(void)
 {
-    unused_isr();
+/* Start user code for r_Config_RIIC0_transmitend_interrupt. Do not edit comment generated here */
+/* End user code. Do not edit comment generated here */
 }
 
 /* INTERRUPT FOR TAUJ0 CHANNEL 0 */

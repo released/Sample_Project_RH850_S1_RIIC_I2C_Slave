@@ -38,7 +38,6 @@ Includes
 #include "Config_OSTM0.h"
 #include "Config_PORT.h"
 #include "Config_UART0.h"
-#include "Config_RIIC0.h"
 #include "Config_RIIC1.h"
 #include "r_cg_cgc.h"
 /* Start user code for include. Do not edit comment generated here */
@@ -64,6 +63,5 @@ void R_Systeminit(void)
     R_Config_TAUJ0_0_Create();
     R_Config_OSTM0_Create();
     R_Config_UART0_Create();
-    R_Config_RIIC0_Create();
     R_Config_RIIC1_Create();
 }

@@ -54,11 +54,6 @@
           <Path>src\smc_gen\Config_UART0\Config_UART0.h</Path>
           <Path>src\smc_gen\Config_UART0\Config_UART0_user.c</Path>
         </Category>
-        <Category Name="Config_RIIC0">
-          <Path>src\smc_gen\Config_RIIC0\Config_RIIC0.c</Path>
-          <Path>src\smc_gen\Config_RIIC0\Config_RIIC0.h</Path>
-          <Path>src\smc_gen\Config_RIIC0\Config_RIIC0_user.c</Path>
-        </Category>
         <Category Name="Config_RIIC1">
           <Path>src\smc_gen\Config_RIIC1\Config_RIIC1.c</Path>
           <Path>src\smc_gen\Config_RIIC1\Config_RIIC1.h</Path>
@@ -68,7 +63,6 @@
       <Path>custom_func.c</Path>
       <Path>misc_config.c</Path>
       <Path>retarget.c</Path>
-      <Path>I2C_master_driver.c</Path>
       <Path>I2C_slave_driver.c</Path>
     </Files>
     <DebugOptions>
@@ -102,16 +96,12 @@
           <Path>DefaultBuild\Config_UART0.obj</Path>
           <Path>DefaultBuild\Config_UART0_user.obj</Path>
           <Path>DefaultBuild\retarget.obj</Path>
-          <Path>DefaultBuild\Config_RIIC0.obj</Path>
-          <Path>DefaultBuild\Config_RIIC0_user.obj</Path>
           <Path>DefaultBuild\Config_RIIC1.obj</Path>
           <Path>DefaultBuild\Config_RIIC1_user.obj</Path>
-          <Path>DefaultBuild\I2C_master_driver.obj</Path>
           <Path>DefaultBuild\I2C_slave_driver.obj</Path>
         </LinkOrder>
         <CommonOptions>
           <IncludePathForC>src\smc_gen\Config_RIIC1</IncludePathForC>
-          <IncludePathForC>src\smc_gen\Config_RIIC0</IncludePathForC>
           <IncludePathForC>src\smc_gen\Config_UART0</IncludePathForC>
           <IncludePathForC>src\smc_gen\r_pincfg</IncludePathForC>
           <IncludePathForC>src\smc_gen\general</IncludePathForC>
@@ -129,7 +119,6 @@
           <Option>-g</Option>
           <Option>-g_line</Option>
           <Option>-Isrc\smc_gen\Config_RIIC1</Option>
-          <Option>-Isrc\smc_gen\Config_RIIC0</Option>
           <Option>-Isrc\smc_gen\Config_UART0</Option>
           <Option>-Isrc\smc_gen\r_pincfg</Option>
           <Option>-Isrc\smc_gen\general</Option>

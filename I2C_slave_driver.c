@@ -682,6 +682,11 @@ void IICA0_slave_on_tx_underrun(void)
     I2C_slave_mark_stats_pending();
 }
 
+/*
+    Custom RIIC1 error ISR body.
+    This function is called from r_Config_RIIC1_error_interrupt()
+    when I2C_RIIC1_CUSTOM_ERROR_ISR_ENABLE == 1.
+*/
 uint8_t I2C_Slave_RIIC1_ErrorISR_Custom(void)
 {
 #if (I2C_RIIC1_CUSTOM_ERROR_ISR_ENABLE == 1U)

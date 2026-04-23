@@ -115,8 +115,14 @@ void r_Config_RIIC1_callback_receiveerror(MD_STATUS status)
 void r_Config_RIIC1_error_interrupt(void)
 {
 #if (I2C_RIIC1_CUSTOM_ERROR_ISR_ENABLE == 1U)
+    /*
+        NOTE:
+        This project uses custom slave RIIC1 error ISR handler:
+        I2C_Slave_RIIC1_ErrorISR_Custom().
+        Keep this dispatch in r_Config_RIIC1_error_interrupt().
+    */
     (void)I2C_Slave_RIIC1_ErrorISR_Custom();
-#else
+#else    
     volatile uint8_t dummy;
 
     if ((RIIC1.IER.UINT32 & _RIIC_ARBITRATION_LOST_INT_ENABLE) && (RIIC1.SR2.UINT32 & _RIIC_ARBITRATION_LOST))
@@ -186,7 +192,7 @@ void r_Config_RIIC1_error_interrupt(void)
             g_riic1_state = _RIIC_SLAVE_SENDS_DATA;
         }
     }
-#endif
+#endif    
 }
 
 /***********************************************************************************************************************
@@ -202,22 +208,13 @@ void r_Config_RIIC1_transmit_interrupt(void)
     {
         if (_RIIC_SLAVE_SENDS_DATA == g_riic1_state)
         {
-            if (g_riic1_tx_count > 0U)
-            {
-                RIIC1.DRT.UINT32 = *gp_riic1_tx_address;
-                gp_riic1_tx_address++;
-                g_riic1_tx_count--;
+            RIIC1.DRT.UINT32 = *gp_riic1_tx_address;
+            gp_riic1_tx_address++;
+            g_riic1_tx_count--;
 
-                if (0U == g_riic1_tx_count)
-                {
-                    g_riic1_state = _RIIC_SLAVE_SENDS_END;
-                }
-            }
-            else
+            if (0U == g_riic1_tx_count)
             {
-                /* TX underrun fallback: keep returning 0xFF until master sends NACK/STOP */
-                RIIC1.DRT.UINT32 = I2C_SLAVE_TX_UNDERRUN_DEFAULT;
-                IICA0_slave_on_tx_underrun();
+                g_riic1_state = _RIIC_SLAVE_SENDS_END;
             }
         }
     }
